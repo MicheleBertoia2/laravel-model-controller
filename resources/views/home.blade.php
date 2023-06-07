@@ -8,11 +8,36 @@
     @vite('resources/js/app.js')
 
 
-    <title>@yield('pageTitle')</title>
+    <title>Laravel Movies MVC</title>
 </head>
 <body>
 
-    ciaoaa
+    <div class="container">
+
+        <h1  class="my-5">Movies selection</h1>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Vote</th>
+              </tr>
+            </thead>
+            <tbody>
+                @forelse ( $movies as $movie )
+                    <tr>
+                        <td>{{ $movie->id }}</td>
+                        <td>{{ $movie->title }}</td>
+                        <td>{{ $movie->vote }}</td>
+                    </tr>
+                @empty
+                    <h2>Non ci sono risultati</h2>
+                @endforelse
+            </tbody>
+          </table>
+
+    </div>
 
 </body>
 </html>
