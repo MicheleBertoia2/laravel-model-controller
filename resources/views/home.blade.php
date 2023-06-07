@@ -30,7 +30,7 @@
                         <td>{{ $movie->id }}</td>
                         <td>{{ $movie->title }}</td>
                         <td>{{ $movie->vote }}</td>
-                        <td><a href="{{route('movie_detail')}}" class="btn btn-success">Vai</a></td>
+                        <td><a href="{{route('movie_detail',  ['id' =>  $movie->id])}}" class="btn btn-success">Vai</a></td>
                     </tr>
                 @empty
                     <h2>Non ci sono risultati</h2>

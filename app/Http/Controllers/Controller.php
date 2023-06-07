@@ -17,7 +17,8 @@ class Controller extends BaseController
         return view('home', compact('movies'));
     }
 
-    public function movie_detail(){
-        return view('movie_detail');
+    public function movie_detail($id){
+        $movie = Movie::where('id',$id)->first();
+        return view('movie_detail',compact('movie'));
     }
 }
