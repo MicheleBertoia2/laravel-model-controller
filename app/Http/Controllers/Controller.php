@@ -16,4 +16,8 @@ class Controller extends BaseController
         $movies = Movie::all();
         return view('home', compact('movies'));
     }
+
+    public function movie_detail(){
+        return view('movie_detail');
+    }
 }
